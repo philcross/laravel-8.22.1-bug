@@ -16,8 +16,9 @@ class UserCollection extends ResourceCollection
     public function toArray($request)
     {
         return [
-            'users' => $this->collection->map(function (User $user) {
-                return UserResource::make($user);
+            'users' => $this->collection,
+            'all_emails' => $this->resource->map(function (User $user) {
+                return $user->email;
             }),
         ];
     }

@@ -12,7 +12,7 @@ class UserTest extends TestCase
 
     public function testUserCollection()
     {
-        User::factory()->count(10)->create();
+        User::factory()->count(2)->create();
 
         $response = $this->getJson('/users');
 
